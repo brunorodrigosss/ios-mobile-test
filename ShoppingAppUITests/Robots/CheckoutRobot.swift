@@ -61,4 +61,9 @@ extension ShoppingAppUiTestsBase {
             checkout_scrollTo(pickupPoint: pickupPoint)
         }
     }
+
+    func checkout_concludeCheckout() {
+        checkout_tapPayNow()
+        checkout_tapPay()
+    }
 }

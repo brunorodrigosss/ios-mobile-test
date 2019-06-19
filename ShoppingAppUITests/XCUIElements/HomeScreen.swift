@@ -10,15 +10,18 @@ import Foundation
 import XCTest
 
 enum HomeScreen: String {
+    case home = "HOME"
     case title = "Welcome"
     case subtitle = "Adding dimension to your ideas"
     case text = "Your complete 3D printing solutions"
-    
     case shoppingApp = "SHOPPING APP"
     case startShopping = "Start Shopping"
 
     var element: XCUIElement {
         switch self {
+        case .home:
+            return XCUIApplication().navigationBars[self.rawValue]
+
         case .title, .subtitle, .text:
             return XCUIApplication().staticTexts[self.rawValue]
 

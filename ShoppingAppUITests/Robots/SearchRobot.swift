@@ -43,6 +43,7 @@ extension ShoppingAppUiTestsBase {
                     SearchScreen.product1.element.tap()
                 }
             }
+            productDetails_assertElements(product: product)
         }
     }
 }

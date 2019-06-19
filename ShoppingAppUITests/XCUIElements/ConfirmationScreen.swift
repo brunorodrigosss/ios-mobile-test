@@ -15,7 +15,6 @@ enum ConfirmationScreen: String {
     case titleDescription = "Pickup available at:"
     case subtitleDescription = "87/93 Main North Rd"
     case description = "SA 5083"
-
     case checkout = "CHECKOUT"
     case keepShopping = "KEEP SHOPPING"
 

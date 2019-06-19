@@ -18,7 +18,6 @@ enum CartSreen: String {
     case paintDetails = "Finish: No Paint"
     case quantity = "Quantity: 1"
     case material = "Material: PLA"
-
     case edit = "Edit"
     case checkout = "CHECKOUT"
     case deleteHeadSet = "Delete D.Va Headset, $60.00, Finish: No Paint, Quantity: 1, Material: PLA"

@@ -11,6 +11,8 @@ import XCTest
 
 extension ShoppingAppUiTestsBase {
     func productList_tapProduct(product: String) {
+        productList_assertElements()
+        
         XCTContext.runActivity(named: "Tap \(product) Product") { _ -> Void in
             switch (product) {
             case "D.Va Headset":
@@ -21,7 +23,17 @@ extension ShoppingAppUiTestsBase {
 
             default: break
             }
+        }
 
+        productDetails_assertElements(product: product)
+    }
+
+    func productList_assertElements() {
+        XCTContext.runActivity(named: "Assert elements") { _ in
+            XCTAssertTrue(ProductListScreen.list.element.exists)
+            XCTAssertTrue(ProductListScreen.product1.element.exists)
+            XCTAssertTrue(ProductListScreen.product2.element.exists)
+            XCTAssertTrue(ProductListScreen.home.element.exists)
         }
     }
 }

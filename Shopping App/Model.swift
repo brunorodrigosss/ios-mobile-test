@@ -129,10 +129,10 @@ class Model: NSObject, CLLocationManagerDelegate {
     }
     
     func addItemToList(_ newProduct: Product!, imageURL: String) {
-        
-        if checkForProduct(newProduct) == -1 {
+        DispatchQueue.main.async {
+            if self.checkForProduct(newProduct) == -1 {
             let managedContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-            let picture = UIImageJPEGRepresentation(loadImage(imageURL), 1)
+                let picture = UIImageJPEGRepresentation(self.loadImage(imageURL), 1)
             let entity = NSEntityDescription.entity(forEntityName: "Products", in: managedContext)
             let productToAdd = NSManagedObject(entity: entity!, insertInto: managedContext)
             
@@ -152,10 +152,10 @@ class Model: NSObject, CLLocationManagerDelegate {
                 print("Could not save. \(error), \(error.userInfo)")
             }
             
-            storedProducts.append(productToAdd)
+                self.storedProducts.append(productToAdd)
             newProduct.image = UIImage(data: picture!)
-            products.append(newProduct)
-            
+                self.products.append(newProduct)
+            }
         }
     }
     

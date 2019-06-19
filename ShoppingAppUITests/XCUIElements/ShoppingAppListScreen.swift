@@ -10,7 +10,7 @@ import Foundation
 import XCTest
 
 enum ShoppingAppListScreen: String {
-    case allow = "Allow"
+    case shoppingApp = "SHOPPING APP"
     case home = "Home"
     case list = "List"
     case search = "Search"
@@ -20,7 +20,10 @@ enum ShoppingAppListScreen: String {
 
     var element: XCUIElement {
         switch self {
-        case .allow, .home, .list, .search, .cart, .finder, .checkout:
+        case .shoppingApp:
+            return XCUIApplication().navigationBars[self.rawValue]
+
+        case .home, .list, .search, .cart, .finder, .checkout:
             return XCUIApplication().staticTexts[self.rawValue]
         }
     }

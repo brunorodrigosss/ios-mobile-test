@@ -11,10 +11,8 @@ import XCTest
 
 enum SearchScreen: String {
     case searchItem = "Search Item"
-
     case product1 = "D.Va Headset"
     case product2 = "Scout's Gun"
-
     case shoppingApp = "SHOPPING APP"
     case cancel = "Cancel"
 
